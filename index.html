@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rafa Restaurant Order Form</title>
+<style>
+    .menu-item {
+        margin-bottom: 20px;
+    }
+    .menu-item img {
+        width: 100px;
+        height: auto;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+    .menu-item label, .menu-item input {
+        vertical-align: middle;
+    }
+</style>
+<script>
+function processForm(e) {
+    e.preventDefault(); // Prevent the default form submission via HTTP POST
+    // Here, you can add any form validation or processing
+    window.location.href = 'Thank You.html'; // Redirect to the Thank You page
+}
+</script>
+</head>
+<body>
+<h1>Rumah Makan sunda</h1>
+<form onsubmit="processForm(event)">
+    <label for="name">Nama:</label>
+    <input type="text" id="name" name="name" required>
+    <br><br>
+    <label for="phone">No telepon:</label>
+    <input type="tel" id="phone" name="phone" required>
+    <br><br>
+    <label for="date">Tanggal:</label>
+    <input type="date" id="date" name="date" required>
+    <br><br>
+    <h2>Pilih Menu</h2>
+    
+    <div class="menu-item">
+        <img src="sate.jpg" alt="sate kuah manis">
+        <label for="dish1">sate kuah manis(Rp.95000):</label>
+        <input type="checkbox" id="dish1" name="dish1">
+        <label for="quantity1">Quantity:</label>
+        <input type="number" id="quantity1" name="quantity1" min="0" max="10" value="0">
+    </div>
+
+    <div class="menu-item">
+        <img src="sop iga.jpg" alt="sop iga">
+        <label for="dish2">sop iga (Rp.140000):</label>
+        <input type="checkbox" id="dish2" name="dish2">
+        <label for="quantity2">Quantity:</label>
+        <input type="number" id="quantity2" name="quantity2" min="0" max="10" value="0">
+    </div>
+
+    <div class="menu-item">
+        <img src="gepuk.jpg" alt="Gepuk">
+        <label for="dish3">gepuk(Rp.40000):</label>
+        <input type="checkbox" id="dish3" name="dish3">
+        <label for="quantity3">Quantity:</label>
+        <input type="number" id="quantity3" name="quantity3" min="0" max="10" value="0">
+    </div>
+    
+    <br>
+    <label for="specialRequests">Special Request:</label>
+    <textarea id="specialRequests" name="specialRequests" rows="4" cols="50"></textarea>
+    <br><br>
+    <input type="submit" value="Submit Order">
+</form>
+</body>
+</html>
